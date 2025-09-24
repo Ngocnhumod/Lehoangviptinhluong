@@ -2,58 +2,92 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bảng chấm công & lương (14/08 → 10/09/2025)</title>
+  <title>Bảng chấm công lehoang  & lương (14/08 → 10/09/2025)</title>
   <style>
     :root{
-      --bg:#0f1115; --panel:#171a21; --panel2:#1e232d; --txt:#e8eefc; --muted:#8b93a7; --accent:#77ffd4; --bad:#ff6b6b; --good:#42d392;
-      --warn:#ffd166;
+      --bg:#0c0f14; --panel:#111622; --panel2:#0c1322; --txt:#ecf2ff; --muted:#92a0bb; --accent:#7ef9d3; --accent2:#8ab4ff;
+      --bad:#ff6b6b; --good:#42d392; --warn:#ffd166; --line:#1f2b42;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{margin:0; font:14px/1.45 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background: radial-gradient(1200px 600px at 70% -10%, #1b2030 0%, transparent 60%), 
-                  linear-gradient(180deg, #10131a, #0b0e13 40%), var(--bg); color:var(--txt)}
-    .wrap{max-width:1100px; margin:24px auto; padding:0 16px}
-    h1{font-size:22px; margin:0 0 8px}
-    h2{font-size:16px; margin:14px 0 8px; color:var(--accent)}
-    .card{background:linear-gradient(180deg,#151925,#0f131c); border:1px solid #21283a; border-radius:16px; padding:16px; box-shadow: 0 10px 24px rgba(0,0,0,.25)}
-    .row{display:flex; gap:12px; flex-wrap:wrap}
-    .row > *{flex:1 1 220px}
-    label{display:block; font-size:12px; color:var(--muted); margin-bottom:6px}
-    input, select, button{width:100%; padding:10px 12px; border-radius:12px; border:1px solid #2a3246; background:#0f1320; color:var(--txt)}
-    input::placeholder{color:#73809d}
-    button{cursor:pointer; border:1px solid #2f3a54; background:linear-gradient(180deg,#1a2132,#121829)}
-    button.primary{background:linear-gradient(180deg,#1e2d2a,#14221f); border-color:#265246}
-    button.warn{background:linear-gradient(180deg,#2d281a,#211a12); border-color:#5a4a1b}
-    table{width:100%; border-collapse:separate; border-spacing:0 10px}
-    thead th{font-weight:600; font-size:12px; color:#a8b2c9; text-transform:uppercase; letter-spacing:.3px}
-    tbody tr{background:#121829; border:1px solid #1e2536}
-    tbody td, thead th{padding:10px 12px}
-    tbody tr{border-radius:12px; overflow:hidden}
-    tbody tr td:first-child{border-top-left-radius:12px; border-bottom-left-radius:12px}
-    tbody tr td:last-child{border-top-right-radius:12px; border-bottom-right-radius:12px}
-    .pill{display:inline-flex; align-items:center; gap:6px; padding:4px 8px; border-radius:999px; font-size:12px; border:1px solid #2a3246}
-    .pill.ok{color:var(--good); border-color:#2f5b46; background:#0f1c18}
-    .pill.bad{color:var(--bad); border-color:#5b2f2f; background:#1c0f0f}
-    .pill.warn{color:#ffd166; border-color:#5b4c2f; background:#1c160f}
-    .totals{display:grid; grid-template-columns: repeat(4, 1fr); gap:10px}
-    .totals .box{background:#0f1320; border:1px solid #26304a; border-radius:12px; padding:12px}
-    .totals .box b{font-size:18px}
-    .right{display:flex; justify-content:flex-end; gap:8px}
+    body{margin:0; font:15px/1.55 Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:
+        radial-gradient(800px 400px at 85% -10%, #19243a 0%, transparent 60%),
+        radial-gradient(600px 300px at -10% 10%, #141b29 0%, transparent 50%),
+        linear-gradient(180deg, #0b0f16, #0b0e13 40%);
+      color:var(--txt)}
+    .wrap{max-width:1200px; margin:26px auto; padding:0 18px}
+    header{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:14px}
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{width:40px; height:40px; border-radius:12px; background:linear-gradient(135deg,#1f2b42,#101522); border:1px solid var(--line); display:grid; place-items:center; font-weight:700; color:var(--accent2)}
+    h1{font-size:22px; margin:0}
     .muted{color:var(--muted)}
-    .hr{height:1px; background:#222a3d; margin:14px 0}
-    .small{font-size:12px}
-    .note{font-size:12px; color:#9ab3ff}
+    .card{background:linear-gradient(180deg,#0f1524,#0c111c); border:1px solid var(--line); border-radius:16px; padding:16px; box-shadow: 0 18px 32px rgba(0,0,0,.25)}
+    .hr{height:1px; background:var(--line); margin:18px 0}/* Totals */
+.totals{display:grid; grid-template-columns: repeat(4, 1fr); gap:12px; margin-bottom:8px}
+.totals .box{background:linear-gradient(180deg,#0c1322,#0a0f18); border:1px solid var(--line); border-radius:16px; padding:14px}
+.totals .k{font-size:12px; color:var(--muted)}
+.totals .v{font-size:22px; font-weight:700}
+
+/* Form */
+.row{display:flex; gap:12px; flex-wrap:wrap}
+.row > *{flex:1 1 220px}
+label{display:block; font-size:12px; color:var(--muted); margin:0 0 6px}
+input, select, button{width:100%; padding:12px 12px; border-radius:12px; border:1px solid #23314e; background:#0c1120; color:var(--txt)}
+input::placeholder{color:#6f7ea1}
+button{cursor:pointer; border:1px solid #2f3a54; background:linear-gradient(180deg,#111a2f,#0c1426); transition:transform .04s ease}
+button:active{transform:translateY(1px)}
+button.primary{background:linear-gradient(180deg,#0f2a23,#0c201b); border-color:#1f5a4b}
+button.warn{background:linear-gradient(180deg,#2d281a,#231a10); border-color:#5a4a1b}
+
+/* Table modern */
+table{width:100%; border-collapse:separate; border-spacing:0 10px}
+thead th{font-weight:600; font-size:12px; color:#a8b2c9; text-transform:uppercase; letter-spacing:.3px}
+tbody tr{background:#0b1324; border:1px solid var(--line); border-radius:14px; overflow:hidden}
+tbody td, thead th{padding:12px}
+tbody tr td:first-child{border-top-left-radius:14px; border-bottom-left-radius:14px}
+tbody tr td:last-child{border-top-right-radius:14px; border-bottom-right-radius:14px}
+
+.badge{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; border:1px solid #294a88; background:linear-gradient(180deg,#0e1d36,#0b1627); color:#b9ccff; font-weight:600}
+.pill{display:inline-flex; align-items:center; gap:6px; padding:4px 8px; border-radius:999px; font-size:12px; border:1px solid #2a3246}
+.pill.ok{color:var(--good); border-color:#2f5b46; background:#0f1c18}
+.pill.warn{color:var(--warn); border-color:#5b4c2f; background:#1c160f}
+
+/* === Highlight OT days === */
+tbody tr.is-ot{background:linear-gradient(180deg,#0f1d1a,#0b1412); border-color:#2f5b46; box-shadow:inset 0 0 0 1px rgba(66,211,146,.16), 0 0 0 2px rgba(66,211,146,.06)}
+tbody tr.is-ot td:first-child{border-left:4px solid var(--good)}
+tbody tr.is-ot td:nth-child(6), tbody tr.is-ot td:nth-child(6) b{color:var(--good)}
+
+.right{display:flex; justify-content:flex-end; gap:8px}
+.small{font-size:12px}
+.note{font-size:12px; color:#9ab3ff}
+
+@media (max-width:780px){
+  .totals{grid-template-columns:1fr 1fr}
+  thead{display:none}
+  tbody tr{display:grid; grid-template-columns: 1fr 1fr; gap:0}
+  tbody td{border-bottom:1px solid rgba(255,255,255,.04)}
+  tbody td:nth-child(odd){background:#0b1428}
+}
+
   </style>
 </head>
 <body>
 <div class="wrap">
-  <h1>💼 Bảng chấm công & lương (14/08 → 10/09/2025)</h1>
-  <div class="muted small">Quy ước mặc định: <b>công nhật 230.000đ/8h</b> → lương giờ cơ bản 28.750đ, tăng ca = 1.5× (43.125đ/giờ). Các ngày đặc biệt (29/08: giờ 30k, 09/09: OT theo 29k/h) đã ghi rõ bên dưới.</div>  <div class="hr"></div>  <div class="totals" id="totals">
-    <div class="box"><div class="muted small">Tổng công chính</div><b id="sumMain">0đ</b></div>
-    <div class="box"><div class="muted small">Tổng tiền tăng ca</div><b id="sumOT">0đ</b></div>
-    <div class="box"><div class="muted small">Tổng cộng</div><b id="sumAll">0đ</b></div>
-    <div class="box"><div class="muted small">Số ngày (ghi công)</div><b id="countDays">0</b></div>
+  <header>
+    <div class="brand">
+      <div class="logo">LK</div>
+      <div>
+        <h1>💼 Bảng chấm công & lương</h1>
+        <div class="muted small">14/08 → 10/09/2025 • Công nhật 230.000đ/8h • OT 1.5×</div>
+      </div>
+    </div>
+    <div class="badge">Tổng hợp hiện đại ✨</div>
+  </header>  <div class="totals" id="totals">
+    <div class="box"><div class="k">Tổng công chính</div><div class="v" id="sumMain">0đ</div></div>
+    <div class="box"><div class="k">Tổng tiền tăng ca</div><div class="v" id="sumOT">0đ</div></div>
+    <div class="box"><div class="k">Tổng cộng</div><div class="v" id="sumAll">0đ</div></div>
+    <div class="box"><div class="k">Số ngày ghi công</div><div class="v" id="countDays">0</div></div>
   </div>  <h2>Nhật ký công</h2>
   <div class="card">
     <div class="row">
@@ -62,8 +96,12 @@
         <input type="date" id="fDate" />
       </div>
       <div>
-        <label>Ghi chú / Thứ tự ngày công</label>
-        <input id="fNote" placeholder="VD: Ngày công 15, nửa buổi, có tăng ca…" />
+        <label>Ngày công #</label>
+        <input id="fWorkNo" type="number" placeholder="vd 17" />
+      </div>
+      <div>
+        <label>Ghi chú</label>
+        <input id="fNote" placeholder="VD: nửa buổi, có tăng ca…" />
       </div>
       <div>
         <label>Công chính (tiền)</label>
@@ -100,7 +138,7 @@
         </select>
       </div>
       <div class="right" style="align-items:flex-end">
-        <button class="warn" id="btnCalc">Tính nhanh tiền OT từ giờ</button>
+        <button class="warn" id="btnCalc">Tính nhanh tiền OT</button>
         <button class="primary" id="btnAdd">➕ Thêm dòng</button>
       </div>
     </div>
@@ -117,8 +155,10 @@
       <div>
         <label>Sắp xếp</label>
         <select id="sorter">
-          <option value="dateAsc">Ngày ↑</option>
           <option value="dateDesc" selected>Ngày ↓</option>
+          <option value="dateAsc">Ngày ↑</option>
+          <option value="workDesc">Ngày công ↓</option>
+          <option value="workAsc">Ngày công ↑</option>
           <option value="totalDesc">Tổng tiền ↓</option>
           <option value="totalAsc">Tổng tiền ↑</option>
         </select>
@@ -131,6 +171,7 @@
 <table>
   <thead>
     <tr>
+      <th>Ngày công</th>
       <th>Ngày</th>
       <th>Công chính</th>
       <th>Giờ chính</th>
@@ -143,40 +184,34 @@
   <tbody id="tbody"></tbody>
 </table>
 
-  </div>  <p class="note">Mẹo: Nhập giờ OT + chọn Base giờ + Hệ số → bấm “Tính nhanh tiền OT từ giờ” để auto điền <b>Tiền tăng ca</b>.</p>
+  </div>  <p class="note">Mẹo: Nhập giờ OT + chọn Base giờ + Hệ số → bấm “Tính nhanh tiền OT” để auto điền <b>Tiền tăng ca</b>. Cột <b>Ngày công</b> được ưu tiên hiển thị đầu tiên cho sang xịn mịn ✨.</p>
 </div><script>
 const VND = new Intl.NumberFormat('vi-VN');
 const fmt = n => VND.format(Math.round(n)) + 'đ';
 
-// Dữ liệu đã chốt cùng ck (đến 10/09/2025)
+// Dữ liệu đã chốt đến 10/09/2025
 let rows = [
-  // Tháng 8
-  r('2025-08-14', 230000, 8, 2.5, 107813, 'Ngày công 1 – có tăng ca'),
-  r('2025-08-15', 230000, 8, 0, 0, 'Ngày công 2'),
-  r('2025-08-16', 230000, 8, 0, 0, 'Ngày công 3'),
-  r('2025-08-18', 230000, 8, 0, 0, 'Ngày công 4'),
-  r('2025-08-22', 172500, 6, 2, 86250, 'Ngày công 5 – 6h chính + OT'),
-  r('2025-08-23', 230000, 8, 2.7666667, 119313, 'Ngày công 6 – OT 2h46 (làm tròn)') ,
-  r('2025-08-25', 115000, 4, 0, 0, 'Ngày công 7 – nửa buổi chiều'),
-  r('2025-08-26', 230000, 8, 0, 0, 'Ngày công 8'),
-  r('2025-08-27', 230000, 8, 0, 0, 'Ngày công 9'),
-  // 28/08 nghỉ
-  // 29/08: giờ 30k + OT tính theo base 28.750đ/h (đã chốt số tiền ở sổ trước)
-  r('2025-08-29', 225000, 7.5, 0.75, 32344, 'Ngày công 10 – sáng & chiều tính 30k/h; OT trưa 45 phút'),
-  r('2025-08-30', 230000, 8, 0, 0, 'Ngày công 11'),
-
-  // Tháng 9
-  r('2025-09-05', 230000, 8, 0, 0, 'Ngày công 12'),
-  r('2025-09-06', 230000, 8, 2.1666667, 94000, 'Ngày công 13 – OT 2h10 (chốt 94k)'),
-  r('2025-09-08', 115000, 4, 0, 0, 'Ngày công 14 – nửa buổi'),
-  // 09/09: OT tính theo base 29k/h, hệ số 1.5 → 108.750đ
-  r('2025-09-09', 230000, 8, 2.5, 108750, 'Ngày công 15 – OT tối (base 29k/h)'),
-  r('2025-09-10', 230000, 8, 0, 0, 'Ngày công 16')
+  R('2025-08-14', 1, 230000, 8, 2.5, 107813, 'Có tăng ca'),
+  R('2025-08-15', 2, 230000, 8, 0, 0, ''),
+  R('2025-08-16', 3, 230000, 8, 0, 0, ''),
+  R('2025-08-18', 4, 230000, 8, 0, 0, ''),
+  R('2025-08-22', 5, 172500, 6, 2, 86250, '6h chính + OT'),
+  R('2025-08-23', 6, 230000, 8, 2.7666667, 119313, 'OT 2h46'),
+  R('2025-08-25', 7, 115000, 4, 0, 0, 'Nửa buổi chiều'),
+  R('2025-08-26', 8, 230000, 8, 0, 0, ''),
+  R('2025-08-27', 9, 230000, 8, 0, 0, ''),
+  R('2025-08-29', 10, 225000, 7.5, 0.75, 32344, 'Giờ 30k/h + OT 45p'),
+  R('2025-08-30', 11, 230000, 8, 0, 0, ''),
+  R('2025-09-05', 12, 230000, 8, 0, 0, ''),
+  R('2025-09-06', 13, 230000, 8, 2.1666667, 94000, 'OT 2h10 (94k)'),
+  R('2025-09-08', 14, 115000, 4, 0, 0, 'Nửa buổi'),
+  R('2025-09-09', 15, 230000, 8, 2.5, 108750, 'OT tối (base 29k/h)'),
+  R('2025-09-10', 16, 230000, 8, 0, 0, '')
 ];
 
-function r(date, mainPay, mainHours, otHours, otPay, note){
+function R(date, workNo, mainPay, mainHours, otHours, otPay, note){
   const total = (mainPay||0) + (otPay||0);
-  return {date, mainPay, mainHours, otHours, otPay, total, note};
+  return {date, workNo, mainPay, mainHours, otHours, otPay, total, note};
 }
 
 function render(){
@@ -191,24 +226,28 @@ function render(){
   const s = document.getElementById('sorter').value;
   if(s==='dateAsc') list.sort((a,b)=> a.date.localeCompare(b.date));
   if(s==='dateDesc') list.sort((a,b)=> b.date.localeCompare(a.date));
+  if(s==='workAsc') list.sort((a,b)=> (a.workNo||0) - (b.workNo||0));
+  if(s==='workDesc') list.sort((a,b)=> (b.workNo||0) - (a.workNo||0));
   if(s==='totalDesc') list.sort((a,b)=> (b.total)-(a.total));
   if(s==='totalAsc') list.sort((a,b)=> (a.total)-(b.total));
 
-  let sumMain=0, sumOT=0;
   list.forEach(x=>{
-    sumMain += x.mainPay||0; sumOT += x.otPay||0;
     const tr = document.createElement('tr');
+    if ((x.otPay||0) > 0) tr.classList.add('is-ot');
+    const otPill = (x.otPay||0) > 0 ? '<span class="pill ok">OT</span>' : '';
     tr.innerHTML = `
-      <td><b>${fmtDate(x.date)}</b></td>
+      <td><b>#${x.workNo||'—'}</b></td>
+      <td>${fmtDate(x.date)}</td>
       <td>${fmt(x.mainPay||0)}</td>
       <td>${x.mainHours? x.mainHours.toFixed(2).replace('.00','')+'h' : '<span class="muted">—</span>'}</td>
       <td>${x.otHours? x.otHours.toFixed(2).replace('.00','')+'h' : '<span class="muted">0</span>'}</td>
-      <td>${x.otPay? fmt(x.otPay) : '<span class="muted">0đ</span>'}</td>
+      <td>${x.otPay? fmt(x.otPay) : '<span class="muted">0đ</span>'} ${otPill}</td>
       <td><b>${fmt(x.total)}</b></td>
       <td class="small">${x.note||''}</td>`;
     tb.appendChild(tr);
   });
-  // totals
+
+  // totals (tính theo toàn bộ rows)
   const allMain = rows.reduce((a,b)=>a+(b.mainPay||0),0);
   const allOT = rows.reduce((a,b)=>a+(b.otPay||0),0);
   document.getElementById('sumMain').textContent = fmt(allMain);
@@ -229,20 +268,16 @@ function fmtDate(s){
 const btnAdd = document.getElementById('btnAdd');
 btnAdd.addEventListener('click', ()=>{
   const date = document.getElementById('fDate').value;
+  const workNo = Number(document.getElementById('fWorkNo').value||0);
   const note = document.getElementById('fNote').value.trim();
   const mainPay = Number(document.getElementById('fMainPay').value||0);
   const mainHours = Number(document.getElementById('fMainHours').value||0);
   const otHours = Number(document.getElementById('fOTHours').value||0);
   const otPay = Number(document.getElementById('fOTPay').value||0);
   if(!date){ alert('Nhập ngày'); return; }
-  rows.push(r(date, mainPay, mainHours, otHours, otPay, note));
+  rows.push(R(date, workNo, mainPay, mainHours, otHours, otPay, note));
   render();
-  // reset minimal
-  document.getElementById('fNote').value='';
-  document.getElementById('fMainPay').value='';
-  document.getElementById('fMainHours').value='';
-  document.getElementById('fOTHours').value='';
-  document.getElementById('fOTPay').value='';
+  ['fWorkNo','fNote','fMainPay','fMainHours','fOTHours','fOTPay'].forEach(id=>document.getElementById(id).value='');
 });
 
 // Quick calc OT from hours
@@ -267,7 +302,6 @@ btnExport.addEventListener('click', ()=>{
   URL.revokeObjectURL(url);
 });
 
-// Filters
 ['filter','sorter'].forEach(id=>document.getElementById(id).addEventListener('change', render));
 
 render();
