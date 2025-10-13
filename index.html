@@ -2,308 +2,241 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bảng chấm công lehoang  & lương (14/08 → 10/09/2025)</title>
+  <title>Chấm công – Cấp đông cá</title>
   <style>
     :root{
-      --bg:#0c0f14; --panel:#111622; --panel2:#0c1322; --txt:#ecf2ff; --muted:#92a0bb; --accent:#7ef9d3; --accent2:#8ab4ff;
-      --bad:#ff6b6b; --good:#42d392; --warn:#ffd166; --line:#1f2b42;
+      --bg:#0b1020; --card:#121a2f; --muted:#94a3b8; --txt:#e6edf7; --acc:#22d3ee; --ok:#4ade80; --warn:#f59e0b; --danger:#ef4444; --radius:14px;
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0; font:15px/1.55 Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background:
-        radial-gradient(800px 400px at 85% -10%, #19243a 0%, transparent 60%),
-        radial-gradient(600px 300px at -10% 10%, #141b29 0%, transparent 50%),
-        linear-gradient(180deg, #0b0f16, #0b0e13 40%);
-      color:var(--txt)}
-    .wrap{max-width:1200px; margin:26px auto; padding:0 18px}
-    header{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:14px}
-    .brand{display:flex; align-items:center; gap:12px}
-    .logo{width:40px; height:40px; border-radius:12px; background:linear-gradient(135deg,#1f2b42,#101522); border:1px solid var(--line); display:grid; place-items:center; font-weight:700; color:var(--accent2)}
-    h1{font-size:22px; margin:0}
-    .muted{color:var(--muted)}
-    .card{background:linear-gradient(180deg,#0f1524,#0c111c); border:1px solid var(--line); border-radius:16px; padding:16px; box-shadow: 0 18px 32px rgba(0,0,0,.25)}
-    .hr{height:1px; background:var(--line); margin:18px 0}/* Totals */
-.totals{display:grid; grid-template-columns: repeat(4, 1fr); gap:12px; margin-bottom:8px}
-.totals .box{background:linear-gradient(180deg,#0c1322,#0a0f18); border:1px solid var(--line); border-radius:16px; padding:14px}
-.totals .k{font-size:12px; color:var(--muted)}
-.totals .v{font-size:22px; font-weight:700}
-
-/* Form */
-.row{display:flex; gap:12px; flex-wrap:wrap}
-.row > *{flex:1 1 220px}
-label{display:block; font-size:12px; color:var(--muted); margin:0 0 6px}
-input, select, button{width:100%; padding:12px 12px; border-radius:12px; border:1px solid #23314e; background:#0c1120; color:var(--txt)}
-input::placeholder{color:#6f7ea1}
-button{cursor:pointer; border:1px solid #2f3a54; background:linear-gradient(180deg,#111a2f,#0c1426); transition:transform .04s ease}
-button:active{transform:translateY(1px)}
-button.primary{background:linear-gradient(180deg,#0f2a23,#0c201b); border-color:#1f5a4b}
-button.warn{background:linear-gradient(180deg,#2d281a,#231a10); border-color:#5a4a1b}
-
-/* Table modern */
-table{width:100%; border-collapse:separate; border-spacing:0 10px}
-thead th{font-weight:600; font-size:12px; color:#a8b2c9; text-transform:uppercase; letter-spacing:.3px}
-tbody tr{background:#0b1324; border:1px solid var(--line); border-radius:14px; overflow:hidden}
-tbody td, thead th{padding:12px}
-tbody tr td:first-child{border-top-left-radius:14px; border-bottom-left-radius:14px}
-tbody tr td:last-child{border-top-right-radius:14px; border-bottom-right-radius:14px}
-
-.badge{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; border:1px solid #294a88; background:linear-gradient(180deg,#0e1d36,#0b1627); color:#b9ccff; font-weight:600}
-.pill{display:inline-flex; align-items:center; gap:6px; padding:4px 8px; border-radius:999px; font-size:12px; border:1px solid #2a3246}
-.pill.ok{color:var(--good); border-color:#2f5b46; background:#0f1c18}
-.pill.warn{color:var(--warn); border-color:#5b4c2f; background:#1c160f}
-
-/* === Highlight OT days === */
-tbody tr.is-ot{background:linear-gradient(180deg,#0f1d1a,#0b1412); border-color:#2f5b46; box-shadow:inset 0 0 0 1px rgba(66,211,146,.16), 0 0 0 2px rgba(66,211,146,.06)}
-tbody tr.is-ot td:first-child{border-left:4px solid var(--good)}
-tbody tr.is-ot td:nth-child(6), tbody tr.is-ot td:nth-child(6) b{color:var(--good)}
-
-.right{display:flex; justify-content:flex-end; gap:8px}
-.small{font-size:12px}
-.note{font-size:12px; color:#9ab3ff}
-
-@media (max-width:780px){
-  .totals{grid-template-columns:1fr 1fr}
-  thead{display:none}
-  tbody tr{display:grid; grid-template-columns: 1fr 1fr; gap:0}
-  tbody td{border-bottom:1px solid rgba(255,255,255,.04)}
-  tbody td:nth-child(odd){background:#0b1428}
-}
-
+    html,body{height:100%;margin:0;font:15px/1.45 system-ui,Segoe UI,Roboto,Inter,Arial;background:var(--bg);color:var(--txt)}
+    .wrap{max-width:980px;margin-inline:auto;padding:14px}
+    h1{font-size:22px;margin:8px 0 12px}
+    .card{background:linear-gradient(180deg,#141c33,#0f172a);border:1px solid #1f2a44;border-radius:var(--radius);padding:14px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+    .grid{display:grid;gap:10px}
+    @media (min-width:720px){.grid{grid-template-columns:repeat(12,1fr)}}
+    label{font-weight:600;color:#c7d2fe;font-size:13px}
+    .row{display:grid;grid-template-columns:1fr;gap:6px}
+    @media (min-width:720px){.row{grid-template-columns:repeat(6,1fr);align-items:end}}
+    input,select,button{width:100%;padding:10px 12px;border-radius:10px;border:1px solid #26324f;background:#0b1530;color:var(--txt)}
+    input:focus,select:focus{outline:none;border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,.25)}
+    .btn{cursor:pointer;font-weight:700}
+    .btn-acc{background:linear-gradient(180deg,#22d3ee,#0891b2);border:none}
+    .btn-ghost{background:transparent;border:1px dashed #334155;color:#94a3b8}
+    .btn-danger{background:linear-gradient(180deg,#ef4444,#b91c1c);border:none}
+    .flex{display:flex;gap:10px;flex-wrap:wrap}
+    .pill{padding:6px 10px;border-radius:999px;background:#0b1530;border:1px solid #26324f;font-size:12px;color:#cbd5e1}
+    .muted{color:var(--muted);font-size:13px}
+    table{width:100%;border-collapse:collapse;margin-top:12px}
+    th,td{padding:10px 8px;border-bottom:1px solid #1e293b;text-align:left}
+    th{font-size:12px;color:#a5b4fc;text-transform:uppercase;letter-spacing:.06em}
+    tfoot td{font-weight:800;border-top:2px solid #334155}
+    .right{text-align:right}
+    .center{text-align:center}
+    .badge{display:inline-block;padding:3px 8px;border-radius:8px;background:#0b1530;border:1px solid #334155;font-size:12px}
+    .hint{font-size:12px;color:#93c5fd}
+    .row-compact{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .danger{color:#fecaca}
+    .toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
   </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <div class="brand">
-      <div class="logo">LK</div>
-      <div>
-        <h1>💼 Bảng chấm công & lương</h1>
-        <div class="muted small">14/08 → 10/09/2025 • Công nhật 230.000đ/8h • OT 1.5×</div>
+  <div class="wrap">
+    <h1>🧊 Chấm công – Cấp đông cá</h1>
+    <div class="card">
+      <div class="grid" style="gap:12px">
+        <div class="row">
+          <div>
+            <label for="date">Ngày</label>
+            <input id="date" type="date" />
+          </div>
+          <div>
+            <label for="start">Giờ vào</label>
+            <input id="start" type="time" step="300" />
+          </div>
+          <div>
+            <label for="end">Giờ ra</label>
+            <input id="end" type="time" step="300" />
+          </div>
+          <div>
+            <label for="breakMin">Nghỉ (phút)</label>
+            <input id="breakMin" type="number" inputmode="numeric" min="0" value="0" />
+          </div>
+          <div>
+            <label for="rate">Lương/giờ (VND)</label>
+            <input id="rate" type="number" inputmode="numeric" min="0" value="35000" />
+          </div>
+          <div>
+            <label for="allow">Phụ cấp/ca (VND)</label>
+            <input id="allow" type="number" inputmode="numeric" min="0" value="21000" />
+          </div>
+        </div>
+        <div class="toolbar">
+          <button class="btn btn-acc" id="addBtn">➕ Thêm ngày</button>
+          <button class="btn btn-ghost" id="presetBtn">⏱️ Ca chuẩn 06:30–17:00</button>
+          <button class="btn btn-ghost" id="exportBtn">📤 Xuất CSV</button>
+          <button class="btn btn-danger" id="clearBtn">🗑️ Xoá tất cả</button>
+          <span class="pill">35k/giờ + phụ cấp 21k/ca • Có thể ra sớm</span>
+        </div>
+        <div class="hint">Mẹo: Nếu ra sớm, chỉ cần sửa <b>Giờ ra</b>. Công thức: <code>Giờ làm = (Giờ ra − Giờ vào) − Nghỉ</code>. Tiền = Giờ làm × Lương/giờ + Phụ cấp.</div>
+        <div style="overflow:auto">
+          <table id="tbl">
+            <thead>
+              <tr>
+                <th>Ngày</th>
+                <th>Vào</th>
+                <th>Ra</th>
+                <th class="right">Nghỉ (phút)</th>
+                <th class="right">Giờ làm</th>
+                <th class="right">Tiền lương</th>
+                <th class="right">Phụ cấp</th>
+                <th class="right">Tổng</th>
+                <th class="center">Xoá</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+              <tr>
+                <td colspan="4">Tổng tháng</td>
+                <td class="right" id="totHours">0</td>
+                <td class="right" id="totWage">0₫</td>
+                <td class="right" id="totAllow">0₫</td>
+                <td class="right" id="totAll">0₫</td>
+                <td></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
       </div>
-    </div>
-    <div class="badge">Tổng hợp hiện đại ✨</div>
-  </header>  <div class="totals" id="totals">
-    <div class="box"><div class="k">Tổng công chính</div><div class="v" id="sumMain">0đ</div></div>
-    <div class="box"><div class="k">Tổng tiền tăng ca</div><div class="v" id="sumOT">0đ</div></div>
-    <div class="box"><div class="k">Tổng cộng</div><div class="v" id="sumAll">0đ</div></div>
-    <div class="box"><div class="k">Số ngày ghi công</div><div class="v" id="countDays">0</div></div>
-  </div>  <h2>Nhật ký công</h2>
-  <div class="card">
-    <div class="row">
-      <div>
-        <label>Ngày</label>
-        <input type="date" id="fDate" />
-      </div>
-      <div>
-        <label>Ngày công #</label>
-        <input id="fWorkNo" type="number" placeholder="vd 17" />
-      </div>
-      <div>
-        <label>Ghi chú</label>
-        <input id="fNote" placeholder="VD: nửa buổi, có tăng ca…" />
-      </div>
-      <div>
-        <label>Công chính (tiền)</label>
-        <input id="fMainPay" type="number" placeholder="vd 230000" />
-      </div>
-      <div>
-        <label>Giờ chính (tuỳ chọn)</label>
-        <input id="fMainHours" type="number" step="0.01" placeholder="vd 8 hoặc 4" />
-      </div>
-      <div>
-        <label>Tăng ca (giờ)</label>
-        <input id="fOTHours" type="number" step="0.01" placeholder="vd 2.5" />
-      </div>
-      <div>
-        <label>Tiền tăng ca</label>
-        <input id="fOTPay" type="number" placeholder="vd 107813" />
-      </div>
-    </div>
-    <div class="row" style="margin-top:8px">
-      <div>
-        <label>Hệ số OT</label>
-        <select id="fOTFactor">
-          <option value="1.5" selected>1.5× (mặc định)</option>
-          <option value="1.0">1.0×</option>
-          <option value="2.0">2.0×</option>
-        </select>
-      </div>
-      <div>
-        <label>Base giờ (tính OT nhanh)</label>
-        <select id="fBaseHour">
-          <option value="28750" selected>28.750đ/h (230k/8h)</option>
-          <option value="29000">29.000đ/h</option>
-          <option value="30000">30.000đ/h</option>
-        </select>
-      </div>
-      <div class="right" style="align-items:flex-end">
-        <button class="warn" id="btnCalc">Tính nhanh tiền OT</button>
-        <button class="primary" id="btnAdd">➕ Thêm dòng</button>
-      </div>
-    </div>
-  </div>  <div style="height:10px"></div>  <div class="card">
-    <div class="row">
-      <div>
-        <label>Lọc</label>
-        <select id="filter">
-          <option value="all" selected>Tất cả</option>
-          <option value="ot">Chỉ ngày có tăng ca</option>
-          <option value="noot">Chỉ ngày không tăng ca</option>
-        </select>
-      </div>
-      <div>
-        <label>Sắp xếp</label>
-        <select id="sorter">
-          <option value="dateDesc" selected>Ngày ↓</option>
-          <option value="dateAsc">Ngày ↑</option>
-          <option value="workDesc">Ngày công ↓</option>
-          <option value="workAsc">Ngày công ↑</option>
-          <option value="totalDesc">Tổng tiền ↓</option>
-          <option value="totalAsc">Tổng tiền ↑</option>
-        </select>
-      </div>
-      <div class="right" style="align-items:flex-end">
-        <button id="btnExport">📄 Xuất JSON</button>
-      </div>
-    </div><div style="height:12px"></div>
+    </div><p class="muted" style="margin-top:10px">Dữ liệu lưu trong máy (LocalStorage). Dùng tốt trên điện thoại.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Ngày công</th>
-      <th>Ngày</th>
-      <th>Công chính</th>
-      <th>Giờ chính</th>
-      <th>Tăng ca (giờ)</th>
-      <th>Tiền tăng ca</th>
-      <th>Tổng ngày</th>
-      <th>Ghi chú</th>
-    </tr>
-  </thead>
-  <tbody id="tbody"></tbody>
-</table>
+  </div>  <script>
+    const $ = sel => document.querySelector(sel);
+    const fmtVND = n => new Intl.NumberFormat('vi-VN',{style:'currency',currency:'VND',maximumFractionDigits:0}).format(Math.round(n||0));
 
-  </div>  <p class="note">Mẹo: Nhập giờ OT + chọn Base giờ + Hệ số → bấm “Tính nhanh tiền OT” để auto điền <b>Tiền tăng ca</b>. Cột <b>Ngày công</b> được ưu tiên hiển thị đầu tiên cho sang xịn mịn ✨.</p>
-</div><script>
-const VND = new Intl.NumberFormat('vi-VN');
-const fmt = n => VND.format(Math.round(n)) + 'đ';
+    // Elements
+    const dateEl = $('#date');
+    const startEl = $('#start');
+    const endEl = $('#end');
+    const breakEl = $('#breakMin');
+    const rateEl = $('#rate');
+    const allowEl = $('#allow');
+    const addBtn = $('#addBtn');
+    const presetBtn = $('#presetBtn');
+    const exportBtn = $('#exportBtn');
+    const clearBtn = $('#clearBtn');
+    const tbody = document.querySelector('#tbl tbody');
+    const totHoursEl = $('#totHours');
+    const totWageEl = $('#totWage');
+    const totAllowEl = $('#totAllow');
+    const totAllEl = $('#totAll');
 
-// Dữ liệu đã chốt đến 10/09/2025
-let rows = [
-  R('2025-08-14', 1, 230000, 8, 2.5, 107813, 'Có tăng ca'),
-  R('2025-08-15', 2, 230000, 8, 0, 0, ''),
-  R('2025-08-16', 3, 230000, 8, 0, 0, ''),
-  R('2025-08-18', 4, 230000, 8, 0, 0, ''),
-  R('2025-08-22', 5, 172500, 6, 2, 86250, '6h chính + OT'),
-  R('2025-08-23', 6, 230000, 8, 2.7666667, 119313, 'OT 2h46'),
-  R('2025-08-25', 7, 115000, 4, 0, 0, 'Nửa buổi chiều'),
-  R('2025-08-26', 8, 230000, 8, 0, 0, ''),
-  R('2025-08-27', 9, 230000, 8, 0, 0, ''),
-  R('2025-08-29', 10, 225000, 7.5, 0.75, 32344, 'Giờ 30k/h + OT 45p'),
-  R('2025-08-30', 11, 230000, 8, 0, 0, ''),
-  R('2025-09-05', 12, 230000, 8, 0, 0, ''),
-  R('2025-09-06', 13, 230000, 8, 2.1666667, 94000, 'OT 2h10 (94k)'),
-  R('2025-09-08', 14, 115000, 4, 0, 0, 'Nửa buổi'),
-  R('2025-09-09', 15, 230000, 8, 2.5, 108750, 'OT tối (base 29k/h)'),
-  R('2025-09-10', 16, 230000, 8, 0, 0, '')
-];
+    // Defaults
+    const todayISO = () => new Date().toISOString().slice(0,10);
+    function setDefaults(){
+      dateEl.value = dateEl.value || todayISO();
+      startEl.value = startEl.value || '06:30';
+      endEl.value = endEl.value || '17:00';
+    }
+    setDefaults();
 
-function R(date, workNo, mainPay, mainHours, otHours, otPay, note){
-  const total = (mainPay||0) + (otPay||0);
-  return {date, workNo, mainPay, mainHours, otHours, otPay, total, note};
-}
+    // Storage helpers
+    const KEY='fish-freeze-timesheet-v1';
+    function load(){
+      try{ return JSON.parse(localStorage.getItem(KEY))||[] }catch{ return [] }
+    }
+    function save(list){ localStorage.setItem(KEY, JSON.stringify(list)); }
 
-function render(){
-  const tb = document.getElementById('tbody');
-  tb.innerHTML = '';
-  let list = [...rows];
-  // filter
-  const f = document.getElementById('filter').value;
-  if(f==='ot') list = list.filter(x=> (x.otPay||0) > 0);
-  if(f==='noot') list = list.filter(x=> (x.otPay||0) === 0);
-  // sort
-  const s = document.getElementById('sorter').value;
-  if(s==='dateAsc') list.sort((a,b)=> a.date.localeCompare(b.date));
-  if(s==='dateDesc') list.sort((a,b)=> b.date.localeCompare(a.date));
-  if(s==='workAsc') list.sort((a,b)=> (a.workNo||0) - (b.workNo||0));
-  if(s==='workDesc') list.sort((a,b)=> (b.workNo||0) - (a.workNo||0));
-  if(s==='totalDesc') list.sort((a,b)=> (b.total)-(a.total));
-  if(s==='totalAsc') list.sort((a,b)=> (a.total)-(b.total));
+    // Time math
+    function toMin(hhmm){
+      if(!hhmm) return 0;
+      const [h,m] = hhmm.split(':').map(Number);
+      return h*60 + (m||0);
+    }
+    function hoursBetween(start, end){
+      let s = toMin(start), e = toMin(end);
+      // Nếu ra sớm hơn vào (qua ngày hôm sau) thì +24h
+      if(e < s) e += 24*60;
+      return (e - s) / 60;
+    }
 
-  list.forEach(x=>{
-    const tr = document.createElement('tr');
-    if ((x.otPay||0) > 0) tr.classList.add('is-ot');
-    const otPill = (x.otPay||0) > 0 ? '<span class="pill ok">OT</span>' : '';
-    tr.innerHTML = `
-      <td><b>#${x.workNo||'—'}</b></td>
-      <td>${fmtDate(x.date)}</td>
-      <td>${fmt(x.mainPay||0)}</td>
-      <td>${x.mainHours? x.mainHours.toFixed(2).replace('.00','')+'h' : '<span class="muted">—</span>'}</td>
-      <td>${x.otHours? x.otHours.toFixed(2).replace('.00','')+'h' : '<span class="muted">0</span>'}</td>
-      <td>${x.otPay? fmt(x.otPay) : '<span class="muted">0đ</span>'} ${otPill}</td>
-      <td><b>${fmt(x.total)}</b></td>
-      <td class="small">${x.note||''}</td>`;
-    tb.appendChild(tr);
-  });
+    function computeRow({date,start,end,breakMin,rate,allow}){
+      const worked = Math.max(0, hoursBetween(start,end) - (Number(breakMin||0)/60));
+      const wage = worked * Number(rate||0);
+      const total = wage + Number(allow||0);
+      return {worked,wage,total};
+    }
 
-  // totals (tính theo toàn bộ rows)
-  const allMain = rows.reduce((a,b)=>a+(b.mainPay||0),0);
-  const allOT = rows.reduce((a,b)=>a+(b.otPay||0),0);
-  document.getElementById('sumMain').textContent = fmt(allMain);
-  document.getElementById('sumOT').textContent = fmt(allOT);
-  document.getElementById('sumAll').textContent = fmt(allMain+allOT);
-  document.getElementById('countDays').textContent = rows.length;
-}
+    function render(){
+      const list = load();
+      tbody.innerHTML='';
+      let sumH=0,sumW=0,sumA=0,sumT=0;
+      list.forEach((row,idx)=>{
+        const {worked,wage,total} = computeRow(row);
+        sumH += worked; sumW += wage; sumA += Number(row.allow||0); sumT += total;
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${row.date}</td>
+          <td>${row.start}</td>
+          <td>${row.end}</td>
+          <td class="right">${Number(row.breakMin||0)}</td>
+          <td class="right">${worked.toFixed(2)}</td>
+          <td class="right">${fmtVND(wage)}</td>
+          <td class="right">${fmtVND(row.allow)}</td>
+          <td class="right">${fmtVND(total)}</td>
+          <td class="center"><button class="btn btn-danger" data-del="${idx}">Xoá</button></td>
+        `;
+        tbody.appendChild(tr);
+      });
+      totHoursEl.textContent = sumH.toFixed(2);
+      totWageEl.textContent = fmtVND(sumW);
+      totAllowEl.textContent = fmtVND(sumA);
+      totAllEl.textContent = fmtVND(sumT);
+    }
 
-function fmtDate(s){
-  const d = new Date(s);
-  const dd = String(d.getDate()).padStart(2,'0');
-  const mm = String(d.getMonth()+1).padStart(2,'0');
-  const yy = d.getFullYear();
-  return `${dd}/${mm}/${yy}`;
-}
+    function addRow(){
+      const date = dateEl.value || todayISO();
+      const start = startEl.value || '06:30';
+      const end = endEl.value || '17:00';
+      const breakMin = Number(breakEl.value||0);
+      const rate = Number(rateEl.value||0);
+      const allow = Number(allowEl.value||0);
+      const row = {date,start,end,breakMin,rate,allow};
+      const list = load();
+      list.push(row); save(list); render();
+    }
 
-// Add new row
-const btnAdd = document.getElementById('btnAdd');
-btnAdd.addEventListener('click', ()=>{
-  const date = document.getElementById('fDate').value;
-  const workNo = Number(document.getElementById('fWorkNo').value||0);
-  const note = document.getElementById('fNote').value.trim();
-  const mainPay = Number(document.getElementById('fMainPay').value||0);
-  const mainHours = Number(document.getElementById('fMainHours').value||0);
-  const otHours = Number(document.getElementById('fOTHours').value||0);
-  const otPay = Number(document.getElementById('fOTPay').value||0);
-  if(!date){ alert('Nhập ngày'); return; }
-  rows.push(R(date, workNo, mainPay, mainHours, otHours, otPay, note));
-  render();
-  ['fWorkNo','fNote','fMainPay','fMainHours','fOTHours','fOTPay'].forEach(id=>document.getElementById(id).value='');
-});
+    function delRow(i){ const list=load(); list.splice(i,1); save(list); render(); }
 
-// Quick calc OT from hours
-const btnCalc = document.getElementById('btnCalc');
-btnCalc.addEventListener('click', ()=>{
-  const hours = Number(document.getElementById('fOTHours').value||0);
-  const base = Number(document.getElementById('fBaseHour').value||28750);
-  const factor = Number(document.getElementById('fOTFactor').value||1.5);
-  const pay = hours * base * factor;
-  document.getElementById('fOTPay').value = Math.round(pay);
-});
+    function exportCSV(){
+      const list = load();
+      const header = ['Ngay','Gio_vao','Gio_ra','Nghi_phut','Gio_lam','Luong_gio','Phu_cap','Tien_luong','Tong'];
+      const lines = [header.join(',')];
+      list.forEach(r=>{
+        const c = computeRow(r);
+        lines.push([
+          r.date, r.start, r.end, r.breakMin, c.worked.toFixed(2), r.rate, r.allow, Math.round(c.wage), Math.round(c.total)
+        ].join(','));
+      });
+      const blob = new Blob(["\uFEFF"+lines.join('\n')],{type:'text/csv;charset=utf-8;'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'cham_cong_cap_dong_ca.csv'; a.click();
+      URL.revokeObjectURL(url);
+    }
 
-// Export
-const btnExport = document.getElementById('btnExport');
-btnExport.addEventListener('click', ()=>{
-  const data = JSON.stringify(rows, null, 2);
-  const blob = new Blob([data], {type:'application/json'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url; a.download = 'cham_cong_1408-1009_2025.json';
-  a.click();
-  URL.revokeObjectURL(url);
-});
+    // Events
+    addBtn.addEventListener('click', addRow);
+    presetBtn.addEventListener('click', ()=>{ startEl.value='06:30'; endEl.value='17:00'; });
+    exportBtn.addEventListener('click', exportCSV);
+    clearBtn.addEventListener('click', ()=>{
+      if(confirm('Xoá tất cả bản ghi?')){ localStorage.removeItem(KEY); render(); }
+    });
+    tbody.addEventListener('click', e=>{
+      const b = e.target.closest('button[data-del]');
+      if(b){ delRow(Number(b.dataset.del)); }
+    });
 
-['filter','sorter'].forEach(id=>document.getElementById(id).addEventListener('change', render));
-
-render();
-</script></body>
+    // First render
+    render();
+  </script></body>
 </html>
